@@ -1,4 +1,9 @@
 <?php
+
+if (!empty($_POST['nomer_kv'])){
+$i =$_POST['nomer_kv'];
+}
+
 class Home
 {
     public $look_kv;
@@ -42,18 +47,8 @@ class Home
       $c = $a - $b;
      echo Этаж . " " . $etajj = floor($c * $this->etaj + 1 ) . "<br>";
 
-
     }
-
 }
-//$handle = fopen ("php://stdin","r");
-//echo "vvedite nomer kvartiru" . " \n";
-//$i =fgets($handle);
-////echo "$i";
-if (!empty($_POST['nomer_kv'])){
-$i =$_POST['nomer_kv'];
-}
-
 
 $object = new Home("ST_5_4", $i);
 $object->wthome();
@@ -64,8 +59,3 @@ $obj = new Home("Khr_9_5", $i);
 $obj->wthome();
 $obj->sumKvartir();
 $obj->helpLook();
-
-
-
-////echo $a;
-//echo $object->kvartir_na_etaje;
