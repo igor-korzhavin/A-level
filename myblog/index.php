@@ -12,6 +12,8 @@ require_once 'valid.php';
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
+    <?php if($_SESSION['logined']): ?>
+    <?php endif; ?>
     <?php  if (!$_SESSION['logined']):?>
         <p class="error"><?=$error_login;?></p>
     <form action="" method="post" class="admin">
@@ -37,7 +39,8 @@ require_once 'valid.php';
 				</p>
 				<p>
 					<?=$res_select[$i]['post_title'];?>
-				</p>
+                <p class="date">Теги: <?=$res_select[$i]['tags'];?></p>
+                </p>
                 <?php if($_SESSION['logined']): ?>
 				<p class="nav">
 					<a href="index.php?page=<?=$res_select[$i]['post_id']?>&del=<?=$res_select[$i]['post_id']?>">удалить</a> |

@@ -12,9 +12,7 @@ require_once 'db.php';
 </head>
 <body>
 <div id="wrapper">
-    <?php for ($i = 0;
-    $i < count($res_select_update);
-    $i++): ?>
+    <?php for ($i = 0;$i < count($res_select_update);$i++): ?>
     <h1><?= $res_select_update[$i]['author'] ?></h1>
     <div>
         <p class="nav right">

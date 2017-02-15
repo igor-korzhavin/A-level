@@ -5,16 +5,16 @@ try {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
-$select = $link->query("SELECT * FROM post ORDER BY post_id DESC");
+$select = $link->query("SELECT post.* , group_concat(tag.tag_title) as tags FROM post LEFT JOIN post_to_tag USING (post_id) LEFT JOIN tag USING (tag_id) group by post.post_id DESC");
 $res_select = $select->fetchAll(PDO::FETCH_ASSOC);
 
 if(!empty($_GET[star])){
-    $select = $link->query("SELECT * FROM post ORDER BY post_id DESC");
+    $select = $link->query("SELECT post.* , group_concat(tag.tag_title) as tags FROM post LEFT JOIN post_to_tag USING (post_id) LEFT JOIN tag USING (tag_id) group by post.post_id DESC");
     $res_select = $select->fetchAll(PDO::FETCH_ASSOC);
 }
 
 if(!empty($_GET[sort])){
-    $select = $link->query("SELECT * FROM post ORDER BY post_id ");
+    $select = $link->query("SELECT post.* , group_concat(tag.tag_title) as tags FROM post LEFT JOIN post_to_tag USING (post_id) LEFT JOIN tag USING (tag_id) group by post.post_id ");
     $res_select = $select->fetchAll(PDO::FETCH_ASSOC);
 }
 

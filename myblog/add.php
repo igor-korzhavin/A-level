@@ -27,7 +27,7 @@ require_once 'db.php';
 					<p><input name="author" class="form-control" placeholder="Название записи"></p>
 					<p><textarea name="post_title" placeholder="Краткое содержание статьи" class="form-control name="" id="" cols="30" rows="10"></textarea></p>
 					<p><textarea name="post_text" class="form-control" placeholder="Текст записи"></textarea></p>
-                    <p><input name="tags_add" class="form-control" placeholder="Теги"></input></p>
+<!--                    <p><input name="tags_add" class="form-control" placeholder="Теги"></input></p>-->
 					<p><input type="submit" class="btn btn-danger btn-block" value="Сохранить"></p>
 				</form>
 			</div>
